@@ -4,7 +4,7 @@ Day 01 - *args and **kwargs
 Create a function that receives N numbers and returns
 each of these multiplied by 2
 """
-# ________________________________________________
+
 # *args
 def multiply_by_two(*numbers):
     results = []
@@ -18,7 +18,7 @@ print(multiply_by_two(5, 9, 6, 3, 8, 15, 8, 6, 23, 1))
 # ---> [10, 18, 12, 6, 16, 30, 16, 12, 46, 2]
 print(multiply_by_two(5, 85, 9))
 # ---> [10, 170, 18]
-#___________________________________________________
+
 """
 Create a function that receives N arguments with your
 personal information: name, age, phone, country, etc
@@ -26,7 +26,7 @@ Then print those values with their names
 name: your name
 country: your country
 """
-#__________________________________________________
+
 # **kwargs
 def personal_information(**info):
     for key, x in info.items():
@@ -41,7 +41,7 @@ personal_information(name="Esteban",
 # lastname: Solorzano
 # age: 26
 # country: Colombia
-#____________________________________________________
+
 """
 The Python print function receives positional and named arguments,
 the named arguments are used to alter the way this print works:

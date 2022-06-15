@@ -5,7 +5,7 @@ Day 06 - Reduce
 Create a function that multiplies a sequence of
 numbers.
 """
-#_______________________________
+
 
 sequence = [2, 5, 7, 9, 4, 1]
 
@@ -15,14 +15,14 @@ def mult(x, y):
 print(reduce(mult, sequence))
 # ---> 2520
 # ---> 2*5=10, 10*7=70, 70*9=630, 630*4=2520, 2520*1=2520
-#_________________________________________________________
+
 """
 Create a function that takes a list of
 strings and return the sum of its characters.
 ["I", "am", "esteban"] => 1 2 and 7
 10
 """
-#____________________________________
+
 
 x = ['I', 'am', 'Jeff']
 

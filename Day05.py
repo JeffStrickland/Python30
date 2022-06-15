@@ -43,13 +43,13 @@ def validate_age(user):
 
 print(list(filter(validate_age, users)))
 # ---> {'name': 'Jose', 'age': 15}]
-#____________________________________________
+
 """
 Create a new list of numbers in this case from -10 to
 10 and return only those that are multiples of 3 and
 negative.
 """
-#_______________________________________________
+
 
 def by_3(x):
     return x % 3 == 0
@@ -58,4 +58,3 @@ newlist = list(range(-10, 11, 1))
 
 print(list(filter(by_3, newlist)))
 # ---> [-9, -6, -3, 0, 3, 6, 9]
-#_______________________________________________
