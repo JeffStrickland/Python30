@@ -35,14 +35,13 @@ def sum_char(a, b):
 
 print(reduce(sum_char, x))
 # ---> 7
-#______________________________________
+
 """
 This challenge can be a bit complicated, however
 remember that in the functions you can perform
 conditionals, take a list of numbers and return
 the largest number.
 """
-#_______________________________________
 
 a = [1, 2, 3, 4, 5, 6, 7, 8]
 
@@ -54,4 +53,3 @@ def largest(x, y):
 
 print(reduce(largest, a))
 # ---> 8
-#________________________________________

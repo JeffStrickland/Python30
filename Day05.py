@@ -52,9 +52,9 @@ negative.
 
 
 def by_3(x):
-    return x % 3 == 0
+    return x % 3 == 0 and x < 0
 
 newlist = list(range(-10, 11, 1))
 
 print(list(filter(by_3, newlist)))
-# ---> [-9, -6, -3, 0, 3, 6, 9]
+# ---> [-9, -6, -3]

@@ -125,21 +125,98 @@ def validate_age(user):
 print(list(filter(validate_age, users)))
 # ---> {'name': 'Jose', 'age': 15}]
 
+### Refactored Using Lambdas
+
+print(list(filter(lambda user: user['age'] < 18, users)))
+# ---> [{'name': 'Jose', 'age': 15}]
+
 """
 Create a new list of numbers in this case from -10 to
 10 and return only those that are multiples of 3 and
 negative.
 """
 
-
 def by_3(x):
-    return x % 3 == 0
+    return x % 3 == 0 and x < 0
 
 newlist = list(range(-10, 11, 1))
 
 print(list(filter(by_3, newlist)))
-# ---> [-9, -6, -3, 0, 3, 6, 9]"""
+# ---> [-9, -6, -3]
+
+### Refactored Using Lambdas
+
+print(list(filter(lambda num: num % 3 == 0 and num < 0, newlist)))
+# ---> [-9, -6, -3]
 
 """
 Reduce
 """
+from functools import reduce
+"""
+Day 06 - Reduce
+
+Create a function that multiplies a sequence of
+numbers.
+"""
+
+sequence = [2, 5, 7, 9, 4, 1]
+
+def mult(x, y):
+    return x * y
+
+print(reduce(mult, sequence))
+# ---> 2520
+# ---> 2*5=10, 10*7=70, 70*9=630, 630*4=2520, 2520*1=2520
+
+### Refactored Using Lambdas
+
+print(reduce(lambda x, y: x * y, sequence))
+# ---> 2520
+
+"""
+Create a function that takes a list of
+strings and return the sum of its characters.
+["I", "am", "esteban"] => 1 2 and 7
+10
+"""
+
+
+x = ['I', 'am', 'Jeff']
+
+def sum_char(a, b):
+    if isinstance(a, str):
+        a = len(a)
+    else:
+        a
+    return a + len(b)
+
+print(reduce(sum_char, x))
+# ---> 7
+
+### Refactored Using Lamdas
+
+print(reduce(lambda word_a, word_b: (len(word_a) if isinstance(word_a, str) else word_a) + len(word_b), x))
+# ---> 7
+
+"""
+This challenge can be a bit complicated, however
+remember that in the functions you can perform
+conditionals, take a list of numbers and return
+the largest number.
+"""
+
+a = [1, 2, 3, 4, 5, 6, 7, 8]
+
+def largest(x, y):
+    max = x
+    if y > max:
+        max = y
+    return max
+
+print(reduce(largest, a))
+# ---> 8
+
+### Refactored Using Lambdas
+print(reduce(lambda num_a, num_b: num_a if num_a > num_b else num_b, a))
+# ---> 8
