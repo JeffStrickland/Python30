@@ -1,3 +1,5 @@
+--->  Just a quick note.  The original author of this challenge only finished up to day 21.  That is why there are no more completed challenges past 21.
+
 # Python30
 Solutions to the Python30 Challenge https://python30.readthedocs.io/en/latest/
 
