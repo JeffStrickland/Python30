@@ -11,9 +11,34 @@ Test 1:
     1 4 6 8 9 10 12 14 15 16 18 20
 """
 
+def not_prime_gen(): # Non prime number generator
+    x = 0
+    while True:
+        if x % 2 == 0:
+            yield x
+            x += 1
+        else:
+            x += 1
+            
+def gen_call_not_prime(z): # Generator call function
+    count = 0
+    for i in not_prime_gen():
+        if count < z:
+            print(i)
+            count += 1
+        else:
+            break
+    
+print(gen_call_not_prime(12))
+
+
+# The following is included for my learning purposes.  Stumbled on prime generators as well and included 
+# this as well as writing the call function to print the first n prime positive integers.
+
 # Sieve of Eratosthenes
 # Code by David Eppstein, UC Irvine, 28 Feb 2002
 # http://code.activestate.com/recipes/117119/
+
 
 def gen_primes():
     """ Generate an infinite sequence of prime numbers.
@@ -33,7 +58,7 @@ def gen_primes():
             # q is a new prime.
             # Yield it and mark its first multiple that isn't
             # already marked in previous iterations
-            yield q
+            yield q 
             D[q * q] = [q]
         else:
             for p in D[q]:
@@ -42,7 +67,7 @@ def gen_primes():
         
         q += 1
 
-def gen_call(x):
+def gen_call(x): # Calls the generator function gen_primes x number of times
     count = 0
     for i in gen_primes():
         if count < x:
@@ -50,25 +75,6 @@ def gen_call(x):
             count += 1
         else:
             break
-        
-    
-#print(gen_call(10))
-
-def not_prime_gen():
-    x = 0
-    if x % 2 == 0:
-        yield x
-        x += 1
-    else:
-        x += 1
             
-def gen_call_not_prime(z):
-    count = 0
-    for i in not_prime_gen():
-        if count < z:
-            print(i)
-            count += 1
-        else:
-            break
+print(gen_call(12))
     
-print(gen_call_not_prime(10))
